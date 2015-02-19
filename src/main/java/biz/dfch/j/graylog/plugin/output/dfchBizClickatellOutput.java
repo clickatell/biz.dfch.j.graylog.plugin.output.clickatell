@@ -83,6 +83,7 @@ public class dfchBizClickatellOutput implements MessageOutput
                 fields = new ArrayList<String>();
                 fields.add("<timestamp>");
                 fields.add("<stream>");
+                fields.add("<source>");
                 fields.add("<message>");
             }
 
