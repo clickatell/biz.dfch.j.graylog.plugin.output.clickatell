@@ -7,7 +7,7 @@ d-fens GmbH, General-Guisan-Strasse 6, CH-6300 Zug, Switzerland
 
 This Graylog Output Plugin lets you send custom formatted short messages (SMS) via the Clickatell Messaging Provider and works with the upcoming version 1 of Graylog.
 
-See [Graylog Clickatell Output Plugin v1](http://d-fens.ch/tag/graylog2/) and [Creating a Graylog Output Plugin](http://d-fens.ch/2015/01/07/howto-creating-a-graylog-output-plugin/) for further description on how to create plugins.
+See [Graylog Clickatell Output Plugin v1](http://d-fens.ch/tag/graylog2/) and [Creating a Graylog Output Plugin](http://d-fens.ch/2015/01/07/howto-creating-a-graylog-output-plugin/) (v0.92.x) for further description on how to create plugins.
 
 You can [download the binary](https://drone.io/github.com/dfch/biz.dfch.j.graylog.plugin.output.clickatell/files) [![Build Status](https://drone.io/github.com/dfch/biz.dfch.j.graylog.plugin.output.clickatell/status.png)](https://drone.io/github.com/dfch/biz.dfch.j.graylog.plugin.output.clickatell/latest) at our [drone.io](https://drone.io/github.com/dfch) account.
 

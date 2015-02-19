@@ -2,12 +2,10 @@ package biz.dfch.j.clickatell;
 
 import biz.dfch.j.clickatell.rest.accountbalance.AccountBalanceResponse;
 import biz.dfch.j.clickatell.rest.coverage.CoverageResponse;
-import biz.dfch.j.clickatell.rest.message.Message;
 import biz.dfch.j.clickatell.rest.message.MessageResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.apache.http.Header;
 import org.apache.http.HeaderElement;
 import org.apache.http.ParseException;
@@ -22,7 +20,6 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.rmi.server.ServerCloneException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -90,9 +87,9 @@ public class ClickatellClient
     };
     private String authToken = "";
     private String bearerToken = "";
-    private static final String apiCoverage = "https://api.clickatell.com/rest/coverage/%s";
-    private static final String apiMessage = "https://api.clickatell.com/rest/message";
-    private static final String apiBalance = "https://api.clickatell.com/rest/account/balance";
+    private static final String APICOVERAGE = "https://api.clickatell.com/rest/coverage/%s";
+    private static final String APIMESSAGE = "https://api.clickatell.com/rest/message";
+    private static final String APIBALANCE = "https://api.clickatell.com/rest/account/balance";
 
     private URI uriCoverage = null;
     private URI uriMessage = null;
@@ -109,8 +106,8 @@ public class ClickatellClient
         }
         this.authToken = authToken;
         this.bearerToken = String.format("Bearer %s", authToken);
-        uriMessage = new URI(apiMessage);
-        uriBalance = new URI(apiBalance);
+        uriMessage = new URI(APIMESSAGE);
+        uriBalance = new URI(APIBALANCE);
     }
 
     public AccountBalanceResponse getBalance()
@@ -133,7 +130,7 @@ public class ClickatellClient
     public CoverageResponse getCoverage(@NotNullable String recipient)
             throws URISyntaxException, IOException
     {
-        URI uriCoverage = new URI(String.format(apiCoverage, recipient));
+        URI uriCoverage = new URI(String.format(APICOVERAGE, recipient));
         String response = Request.Get(uriCoverage.toString())
                 .setHeader(headerApiVersion)
                 .setHeader(headerContentType)
