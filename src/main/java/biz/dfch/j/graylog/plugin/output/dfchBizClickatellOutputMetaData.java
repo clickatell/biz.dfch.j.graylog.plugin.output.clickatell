@@ -15,7 +15,7 @@ public class dfchBizClickatellOutputMetaData implements PluginMetaData
     @Override
     public String getUniqueId()
     {
-        return "dfchBizClickatellOutputPlugin";
+        return "biz.dfch.j.graylog.plugin.output.dfchBizClickatellOutputPlugin";
     }
 
     @Override
