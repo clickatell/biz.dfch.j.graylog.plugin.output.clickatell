@@ -54,7 +54,7 @@ public class dfchBizClickatellOutput implements MessageOutput
 
         try
         {
-            LOG.info("Verifying configuration ...");
+            LOG.debug("Verifying configuration ...");
 
             this.configuration = configuration;
 
@@ -104,7 +104,7 @@ public class dfchBizClickatellOutput implements MessageOutput
 
             LOG.info("Verifying configuration SUCCEEDED.");
 
-            LOG.info("Connecting to Clickatell ...");
+            LOG.debug("Connecting to Clickatell ...");
 
             clickatellClient = new ClickatellClient(configAuthToken);
             AccountBalanceResponse accountBalanceResponse = clickatellClient.getBalance();
@@ -236,7 +236,7 @@ public class dfchBizClickatellOutput implements MessageOutput
             }
             if(0 < maxLength && maxLength < sb.length())
             {
-                LOG.warn(String.format("CONFIG_MAX_LENGTH: Generated message contains '%d' characters and exceeds configured maximum of '%d' characters. Shortening message ...", sb.length(), maxLength));
+                LOG.warn(String.format("CONFIG_MAX_LENGTH: Generated message contains '%d' characters and exceeds configured maximum of '%d' characters. Truncating message ...", sb.length(), maxLength));
                 sb.setLength(maxLength);
             }
 
